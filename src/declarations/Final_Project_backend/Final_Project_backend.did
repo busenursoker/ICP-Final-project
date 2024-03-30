@@ -1,0 +1,15 @@
+type Product = 
+ record {
+   category: text;
+   image_url: text;
+   is_vegan: bool;
+   name: text;
+   product_id: text;
+   purchase_url: text;
+ };
+service : {
+  add_product: (text, text, text, text, text, bool) -> (bool);
+  get_all_products: () -> (vec Product);
+  get_products_by_category: (text) -> (vec Product);
+  remove_product: (text) -> (bool);
+}
